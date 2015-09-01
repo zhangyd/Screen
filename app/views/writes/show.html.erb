@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Person ID:</strong>
+  <%= @write.person_id %>
+</p>
+
+<p>
+  <strong>Publication ID:</strong>
+  <%= @write.publication_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_write_path(@write) %> |
+<%= link_to 'Back', writes_path %>

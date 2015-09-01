@@ -1,0 +1,27 @@
+<h1>Who Has Published What</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Person ID</th>
+      <th>Publication ID</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @writes.each do |write| %>
+      <tr>
+        <td><%= write.person_id %></td>
+        <td><%= write.publication_id %></td>
+        <td><%= link_to 'Show', write %></td>
+        <td><%= link_to 'Edit', edit_write_path(write) %></td>
+        <td><%= link_to 'Destroy', write, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Publishing', new_write_path %>

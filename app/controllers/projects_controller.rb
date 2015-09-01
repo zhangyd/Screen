@@ -10,6 +10,9 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @works = Work.where(:project_id => params[:id])
+    @publications = Publication.where(:project_id => params[:id])
+    @reports = Report.where(:project_id => params[:id])
   end
 
   # GET /projects/new

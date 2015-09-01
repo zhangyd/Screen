@@ -15,6 +15,32 @@
   <%= @project.link %>
 </p>
 
+<!-- Display this project's people -->
+<span><strong>People: </strong></span>
+<% @works.each do |work| %>
+  <span><%= work.person.first_name %></span>
+  <span><%= work.person.last_name %>, </span>
+  <span></span>
+<% end %>
+
+<!-- Display this project's publications -->
+<p><h3>Publications:</h3></p>
+<% @publications.each do |publication| %>
+	<p>
+    <strong>Title: </strong><%= publication.title %><br>
+	  <strong>Link: </strong><%= publication.link %>
+  </p> 
+<% end %>
+
+<!-- Display this project's news reports -->
+<p><h3>News Reports:</h3></p>
+<% @reports.each do |report| %>
+  <p>
+    <strong>Headline: </strong><%= report.headline %><br>
+    <strong>Content: </strong><%= report.content %>
+  </p>
+<% end %>
+
 <p>
   <strong>Description:</strong>
   <%= @project.description %>
