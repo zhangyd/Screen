@@ -15,16 +15,19 @@ class PublicationsController < ApplicationController
   # GET /publications/new
   def new
     @publication = Publication.new
+    @projects = Project.all
   end
 
   # GET /publications/1/edit
   def edit
+    @projects = Project.all
   end
 
   # POST /publications
   # POST /publications.json
   def create
     @publication = Publication.new(publication_params)
+    @projects = Project.all
 
     respond_to do |format|
       if @publication.save

@@ -1,7 +1,8 @@
 class Project < ActiveRecord::Base
-	has_many :report
-	has_many :publication
+	has_many :reports
+	has_many :publications
 
-	has_many :work
-	has_many :person, :through => :work
+	has_many :works
+	has_many :people, :through => :works
+
 end

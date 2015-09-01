@@ -1,31 +1,45 @@
-<h1>Listing projects</h1>
+<h1>Current Projects</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Subtitle</th>
-      <th>Link</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!-- Display all the Projects -->
+<% @projects.each do |project| %>
+    <span><h2><%= project.title %></h2></p></span>
+    <span><%= link_to 'Show', project %></span>
+    <span><%= link_to 'Edit', edit_project_path(project) %></span>
+    <span><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></span>
 
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.subtitle %></td>
-        <td><%= project.link %></td>
-        <td><%= project.description %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <p><%= project.subtitle %></p>
+    <p><strong>Website:</strong> <%= project.link %></p>
+    
+    <!-- Display this project's people -->
+    <span><strong>People: </strong></span>
+    <% project.people.each do |person| %>
+        <span><%= person.first_name %></span>
+        <span><%= person.last_name %>, </span>
+        <span></span>
     <% end %>
-  </tbody>
-</table>
 
+    <p><%= project.description %></p>
+	
+    <!-- Display this project's publications -->
+	<p><h3>Publications:</h3></p>
+	<% project.publications.each do |publication| %>
+		<p><strong>Title: </strong><%= publication.title %></p>
+		<p><strong>Link: </strong><%= publication.link %></p>
+	<% end %>
+
+    <!-- Display this project's news reports -->
+    <p><h3>News Reports:</h3></p>
+    <% project.reports.each do |report| %>
+        <p><strong>Headline: </strong><%= report.headline %></p>
+        <p><strong>Content: </strong><%= report.content %></p>
+    <% end %>
+
+    
+<% end %>
+
+
+<br>
+<br>
 <br>
 
 <%= link_to 'New Project', new_project_path %>

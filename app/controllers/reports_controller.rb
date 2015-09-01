@@ -15,10 +15,12 @@ class ReportsController < ApplicationController
   # GET /reports/new
   def new
     @report = Report.new
+    @projects = Project.all
   end
 
   # GET /reports/1/edit
   def edit
+    @projects = Project.all
   end
 
   # POST /reports

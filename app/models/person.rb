@@ -1,7 +1,7 @@
 class Person < ActiveRecord::Base
-	has_many :work
-	has_many :project, :through => :work
+	has_many :works
+	has_many :projects, :through => :works
 
-	has_many :write
-	has_many :publication, :through => :write 
+	has_many :writes
+	has_many :publications, :through => :writes
 end

@@ -1,6 +1,6 @@
 class Report < ActiveRecord::Base
 	belongs_to :project
 
-	has_many :write 
-	has_many :person, :through => :write 
+	has_many :writes 
+	has_many :people, :through => :writes
 end
