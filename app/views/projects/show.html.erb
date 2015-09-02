@@ -15,6 +15,9 @@
   <%= @project.link %>
 </p>
 
+<!-- Display Picture -->
+<p><%= image_tag @project.avatar.url(:medium) %></p>
+
 <!-- Display this project's people -->
 <span><strong>People: </strong></span>
 <% @works.each do |work| %>

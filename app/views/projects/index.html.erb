@@ -18,6 +18,9 @@
   <p><%= project.subtitle %></p>
   
   <p><strong>Website:</strong> <%= project.link %></p>
+
+  <!-- Display Picture -->
+  <p><%= image_tag project.avatar.url(:medium) %></p>
   
   <!-- Display this project's people -->
   <span><strong>People: </strong></span>
