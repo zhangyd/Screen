@@ -1,6 +1,7 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, :only => [:new,:create,:destroy,:edit,:update]
+  # before_action :authenticate_user!, :only => [:new,:create,:destroy,:edit,:update]
+  before_action :authenticate_admin!, :only => [:new,:create,:destroy,:edit,:update]
 
   # GET /people
   # GET /people.json

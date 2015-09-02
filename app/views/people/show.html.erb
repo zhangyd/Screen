@@ -38,7 +38,7 @@
   <%= @person.description %>
 </p>
 
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.role == "admin"%>
   <%= link_to 'Edit', edit_person_path(@person) %> |
 <% end %>
 

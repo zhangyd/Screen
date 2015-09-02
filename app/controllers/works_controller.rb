@@ -1,7 +1,8 @@
 class WorksController < ApplicationController
 	before_action :set_work, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, :only => [:new,:create,:destroy,:edit,:update]
-
+  # before_action :authenticate_user!, :only => [:new,:create,:destroy,:edit,:update]
+  before_action :authenticate_admin!
+  
 	def index
     @works = Work.all
     @projects = Project.all
