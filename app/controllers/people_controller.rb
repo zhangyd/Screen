@@ -11,7 +11,6 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.json
   def show
-    @publications = Publication.where(:project_id => params[:id])
   end
 
   # GET /people/new

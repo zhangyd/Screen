@@ -22,7 +22,7 @@
 
 <!-- Display all of this person's publications -->
 <span><strong>Publications: </strong></span><br>
-<% @publications.each do |publication| %>
+<% @person.publications.each do |publication| %>
     <p>
       <span><strong>Title: </strong><%= publication.title %></span><br>
       <span><strong>Link: </strong><%= publication.link %>, </span>
