@@ -1,9 +1,11 @@
 class WritesController < ApplicationController
 	before_action :set_write, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, :only => [:new,:create,:destroy,:edit,:update]
-
+  before_action :authenticate_user!
+  
 	def index
     @writes = Write.all
+    @people = Person.all
+    @publications = Publication.all
   end
 
 	def show

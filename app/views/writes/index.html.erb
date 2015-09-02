@@ -1,27 +1,19 @@
 <h1>Who Has Published What</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Person ID</th>
-      <th>Publication ID</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @writes.each do |write| %>
-      <tr>
-        <td><%= write.person_id %></td>
-        <td><%= write.publication_id %></td>
-        <td><%= link_to 'Show', write %></td>
-        <td><%= link_to 'Edit', edit_write_path(write) %></td>
-        <td><%= link_to 'Destroy', write, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% @writes.each do |write| %>
+  <p>
+    <strong>People: </strong><%= @people.where(:id => write.person_id).first.first_name %><br>
+    <strong>Title: </strong><%= @publications.where(:id => write.publication_id).first.title %><br>
+    <% if user_signed_in? %>
+      <%= link_to 'Edit', edit_write_path(write) %> |
+      <%= link_to 'Delete', write, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
-  </tbody>
-</table>
+  </p>
+<% end %>
 
 <br>
 
-<%= link_to 'New Publishing', new_write_path %>
+<%= link_to 'New Publishing', new_write_path %> |
+<%= link_to 'Back to Main Page', projects_path %> |
+<%= link_to 'Back to Admin Panel', admins_path %>
+

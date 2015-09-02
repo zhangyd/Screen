@@ -1,12 +1,4 @@
-<!-- USER LOGIN  -->
-<% if user_signed_in? %>
-  <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
-  <p><%= link_to 'Back to Admin Panel', admins_path %></p>
-<% else %>
-  <%= link_to "Sign Up", new_user_registration_path %>  |  
-  <%= link_to "Sign In", new_user_session_path %>
-<% end %>
-<!-- USER LOGIN ENDS -->
+
 
 <!-- VIEW ALL CURRENT RESEARCHERS -->
 <p><%= link_to "View Current Researcher Profiles", people_path %></p>

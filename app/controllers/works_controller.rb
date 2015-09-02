@@ -4,6 +4,8 @@ class WorksController < ApplicationController
 
 	def index
     @works = Work.all
+    @projects = Project.all
+    @people = Person.all
   end
 
 	def show
