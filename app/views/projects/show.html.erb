@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<% if user_signed_in? && current_user.role == "admin"%>
+  <%= link_to 'Edit', edit_project_path(@project) %> | 
+<% end %>
+
+<%= link_to 'Back', projects_path %><br>
+
 <p>
   <strong>Title:</strong>
   <%= @project.title %>
@@ -49,11 +55,21 @@
   </p>
 <% end %>
 
-<% if user_signed_in? && current_user.role == "admin"%>
-  <%= link_to 'Edit', edit_project_path(@project) %> | 
+<!-- Display this project's comments -->
+<h3>Comments:</h3>
+<% @comments.each do |comment| %>
+  <div>
+    <p>
+      <strong>Posted by: </strong><%= @users.where(:id => comment.user_id).first.first_name %> <%= @users.where(:id => comment.user_id).first.last_name %><br>
+      <strong>Content: </strong><%= comment.content %>
+    </p>
+  </div>
 <% end %>
+<%= render 'comments/form' %>
 
-<%= link_to 'Back', projects_path %>
+
+<!-- Bottom Options -->
+
 
 
 

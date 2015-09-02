@@ -15,6 +15,12 @@ class ProjectsController < ApplicationController
     @works = Work.where(:project_id => params[:id])
     @publications = Publication.where(:project_id => params[:id])
     @reports = Report.where(:project_id => params[:id])
+
+    @project = Project.find(params[:id])
+
+    @comments = @project.comments.all
+    @comment = @project.comments.build 
+    @users = User.all
   end
 
   # GET /projects/new
