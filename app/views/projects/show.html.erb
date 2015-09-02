@@ -23,6 +23,11 @@
   <span></span>
 <% end %>
 
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
 <!-- Display this project's publications -->
 <p><h3>Publications:</h3></p>
 <% @publications.each do |publication| %>
@@ -41,10 +46,8 @@
   </p>
 <% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
+
+
+
+

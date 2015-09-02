@@ -1,5 +1,6 @@
 class WritesController < ApplicationController
 	before_action :set_write, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :only => [:new,:create,:destroy,:edit,:update]
 
 	def index
     @writes = Write.all

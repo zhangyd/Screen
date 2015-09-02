@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :only => [:new,:create,:destroy,:edit,:update]
 
   # GET /projects
   # GET /projects.json

@@ -1,5 +1,6 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :only => [:new,:create,:destroy,:edit,:update]
 
   # GET /people
   # GET /people.json
@@ -10,7 +11,7 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.json
   def show
-    @publications = Publication.all
+    @publications = Publication.where(:project_id => params[:id])
   end
 
   # GET /people/new

@@ -1,13 +1,30 @@
-<h1>Current Projects</h1>
+<!-- USER LOGIN  -->
+<% if user_signed_in? %>
+  <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+  <p><%= link_to 'Back to Admin Panel', admins_path %></p>
+<% else %>
+  <%= link_to "Sign Up", new_user_registration_path %>  |  
+  <%= link_to "Sign In", new_user_session_path %>
+<% end %>
+<!-- USER LOGIN ENDS -->
 
-<!-- Display all the Projects -->
+<!-- VIEW ALL CURRENT RESEARCHERS -->
+<p><%= link_to "View Current Researcher Profiles", people_path %></p>
+<p><%= link_to "View All Publications", publications_path %></p>
+<p><%= link_to "View All News Reports", reports_path %></p>
+
+<h1>Current Projects</h1><br>
+
+<!-- DISPLAY ALL THE PROJECTS -->
 <% @projects.each do |project| %>
-  <span><h2><%= project.title %></h2></p></span>
-  <span><%= link_to 'Show', project %></span>
-  <span><%= link_to 'Edit', edit_project_path(project) %></span>
-  <span><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-
+  <span><h2><%= project.title %></h2></span>
+  <span><%= link_to 'Show More Detail', project %></span>
+  <% if user_signed_in? %>
+    | <td><%= link_to 'Edit', edit_project_path(project) %></td> |
+    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
   <p><%= project.subtitle %></p>
+  
   <p><strong>Website:</strong> <%= project.link %></p>
   
   <!-- Display this project's people -->
@@ -19,31 +36,11 @@
   <% end %>
 
   <p><%= project.description %></p>
-	
-  <!-- Display this project's publications -->
-	<p><h3>Publications:</h3></p>
-	<% project.publications.each do |publication| %>
-		<p>
-      <strong>Title: </strong><%= publication.title %><br>
-		  <strong>Link: </strong><%= publication.link %>
-    </p> 
-	<% end %>
 
-  <!-- Display this project's news reports -->
-  <p><h3>News Reports:</h3></p>
-  <% project.reports.each do |report| %>
-    <p>
-      <strong>Headline: </strong><%= report.headline %><br>
-      <strong>Content: </strong><%= report.content %>
-    </p>
-  <% end %>
+  <br><br>
 
-    
 <% end %>
+<!-- PROJECT DISPLAY ENDS -->
 
 
-<br>
-<br>
-<br>
 
-<%= link_to 'New Project', new_project_path %>

@@ -1,0 +1,71 @@
+<h1>Welcome to the Admin Panel</h1>
+<h4>You can add new project, researchers, publications, and more on this page.</h4>
+
+<!-- Links to create new entities  -->
+<p>
+	<%= link_to 'Add A New Project', new_project_path %><br>
+	<span>Add the details of a new project.</span>
+</p>
+<p>
+	<%= link_to 'Add A New Researcher', new_person_path %><br>
+	<span>Add the details of a researcher that newly joined the group.</span>
+</p>
+<p>
+	<%= link_to 'Add A New Publication', new_publication_path %><br>
+	<span>Add the details of a new publication.</span>
+</p>
+<p>
+	<%= link_to 'Add A New News Report', new_report_path %><br>
+	<span>Add the details of a new news report article.</span>
+</p>
+<p>
+	<%= link_to 'Add A New Working Relationship', new_work_path %><br>
+	<span>Establish the relationship of Who is Wroking on What here.</span>
+</p>
+<p>
+	<%= link_to 'Add A New Publishing Relationship', new_write_path %><br>
+	<span>Established the relationship of Who Wrote What here.</span>
+</p>
+
+<br><br>
+
+<!-- Links to edit or delete entities -->
+<p>
+	<%= link_to 'Edit Projects', projects_path %><br>
+	<span>Edit the details or delete projects.</span>
+</p>
+
+<p>
+	<%= link_to 'Edit Researchers', people_path %><br>
+	<span>Edit the details or delete researchers.</span>
+</p>
+
+<p>
+	<%= link_to 'Edit Publications', publications_path %><br>
+	<span>Edit the details or delete publication.</span>
+</p>
+
+<p>
+	<%= link_to 'Edit Reports', publications_path %><br>
+	<span>Edit the details or delete publication.</span>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

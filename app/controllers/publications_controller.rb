@@ -1,5 +1,7 @@
 class PublicationsController < ApplicationController
   before_action :set_publication, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :only => [:new,:create,:destroy,:edit,:update]
+
 
   # GET /publications
   # GET /publications.json
@@ -10,6 +12,7 @@ class PublicationsController < ApplicationController
   # GET /publications/1
   # GET /publications/1.json
   def show
+    @project = Project.all.where(:id => Publication.find(params[:id]).project_id)
   end
 
   # GET /publications/new
