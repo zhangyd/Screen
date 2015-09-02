@@ -23,6 +23,15 @@
     <%= f.label :link %><br>
     <%= f.text_field :link %>
   </div>
+
+   <div class="field">
+    <span>Is this project currently in progress?</span><br>
+    <%= f.label :IsCurrent, "Yes", :value => "true"  %>
+    <%= f.radio_button :current, true, :checked => true %>
+    <%= f.label :NotCurrent, "No", :value => "false" %>
+    <%= f.radio_button :current, false %>
+  </div>
+
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>

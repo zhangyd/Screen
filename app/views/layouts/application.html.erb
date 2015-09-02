@@ -10,6 +10,7 @@
 	
 	<!-- USER LOGIN  -->
 	<% if user_signed_in? %>
+		<span>Hello, <%= current_user.first_name %></span> |
 	  <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %> |
 	  <%= link_to "Edit Profile", edit_user_registration_path %>
 	  <% if current_user.role == "admin"  %>

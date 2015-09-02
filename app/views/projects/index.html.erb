@@ -5,10 +5,10 @@
 <p><%= link_to "View All Publications", publications_path %></p>
 <p><%= link_to "View All News Reports", reports_path %></p>
 
-<h1>Current Projects</h1><br>
+<h1>Current Projects</h1>
 
-<!-- DISPLAY ALL THE PROJECTS -->
-<% @projects.each do |project| %>
+<!-- DISPLAY ALL THE CURRENT PROJECTS -->
+<% @cprojects.each do |project| %>
   <span><h2><%= project.title %></h2></span>
   <span><%= link_to 'Show More Detail', project %></span>
   <% if user_signed_in? && current_user.role == "admin"%>
@@ -35,7 +35,58 @@
   <br><br>
 
 <% end %>
-<!-- PROJECT DISPLAY ENDS -->
+<!-- CURRENT PROJECT DISPLAY ENDS -->
+
+
+<h1>Past Projects</h1>
+<!-- DISPLAY ALL THE PAST PROJECTS -->
+<% @nprojects.each do |project| %>
+  <span><h2><%= project.title %></h2></span>
+  <span><%= link_to 'Show More Detail', project %></span>
+  <% if user_signed_in? && current_user.role == "admin"%>
+    | <td><%= link_to 'Edit', edit_project_path(project) %></td> |
+    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+  <p><%= project.subtitle %></p>
+  
+  <p><strong>Website:</strong> <%= project.link %></p>
+
+  <!-- Display Picture -->
+  <p><%= image_tag project.avatar.url(:medium) %></p>
+  
+  <!-- Display this project's people -->
+  <span><strong>People: </strong></span>
+  <% project.people.each do |person| %>
+    <span><%= person.first_name %></span>
+    <span><%= person.last_name %>, </span>
+    <span></span>
+  <% end %>
+
+  <p><%= project.description %></p>
+
+  <br><br>
+
+<% end %>
+<!-- PAST PROJECT DISPLAY ENDS -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

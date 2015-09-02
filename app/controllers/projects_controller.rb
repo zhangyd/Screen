@@ -6,7 +6,8 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @cprojects = Project.where(:current => true)
+    @nprojects = Project.where(:current => false)
   end
 
   # GET /projects/1
@@ -80,6 +81,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:title, :subtitle, :link, :description, :avatar)
+      params.require(:project).permit(:title, :subtitle, :link, :description, :avatar, :current)
     end
 end
