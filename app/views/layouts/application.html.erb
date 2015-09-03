@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Task</title>
+  <title>ScreenTask</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 	
 	<!-- USER LOGIN  -->
-	<% if user_signed_in? %>
-		<span>Hello, <%= current_user.first_name %></span> |
-	  <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %> |
-	  <%= link_to "Edit Profile", edit_user_registration_path %>
-	  <% if current_user.role == "admin"  %>
-	  	<p>
-	  		<%= link_to 'Go to Admin Panel', admins_path %> | 
-	  		<%= link_to 'Go to Main Page', root_path %>
-	  	</p>
+	<div id="login">
+		<% if user_signed_in? %>
+			<span class="login-words">
+				Hello, <%= current_user.first_name %> |
+		  	<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %> |
+		  	<%= link_to "Edit Profile", edit_user_registration_path %>
+		  </span>
+		<% else %>
+			<span class="login-words">
+			  <%= link_to "Sign Up", new_user_registration_path %>  |  
+			  <%= link_to "Sign In", new_user_session_path %>
+		  </span>
+		<% end %>
+	</div>
+	
+	<!-- Devise flash message -->
+	<p class="notice"><%= notice %></p>
+  	<p class="alert"><%= alert %></p>
+
+	<div id="control-panel">
+		<% if user_signed_in? && current_user.role == "admin"  %>
+			<span id="control-panel-words">
+				<%= link_to 'Go to Main Page', root_path %> | 
+				<%= link_to 'Go to Admin Panel', admins_path %>
+			</span>
 	  <% end %>
-	<% else %>
-	  <%= link_to "Sign Up", new_user_registration_path %>  |  
-	  <%= link_to "Sign In", new_user_session_path %>
-	<% end %>
+  </div>
 	<!-- USER LOGIN ENDS -->
 
 
-	<!-- Devise flash message -->
-	<p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
 
-<%= yield %>
+	<%= yield %>
+
+	<br><br><br><br>
 
 </body>
 </html>

@@ -1,45 +1,55 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
+  
+<div id="people-show" class="center-fifty">
+  <br>
+  <div id="profile-pic"><%= image_tag @person.avatar.url(:medium) %></div>
 
-<p>
-  <%= image_tag @person.avatar.url(:thumb) %>  
-</p>
+  <p>
+    <strong>First name:</strong>
+    <%= @person.first_name %>
+  </p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @person.first_name %>
-</p>
+  <p>
+    <strong>Last name:</strong>
+    <%= @person.last_name %>
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @person.last_name %>
-</p>
+  <p>
+    <strong>Major:</strong>
+    <%= @person.major %>
+  </p>
 
-<p>
-  <strong>Major:</strong>
-  <%= @person.major %>
-</p>
+  <p>
+    <strong>Graduation:</strong>
+    <%= @person.graduation %>
+  </p>
 
-<p>
-  <strong>Graduation:</strong>
-  <%= @person.graduation %>
-</p>
+  <!-- Display all of this person's publications -->
+  <span><strong>Publications: </strong></span><br>
+  <% @person.publications.each do |publication| %>
+      <p>
+        <span><strong>Title: </strong><%= publication.title %></span><br>
+        <span><strong>Link: </strong><%= publication.link %>, </span>
+      </p>
+  <% end %>
 
-<!-- Display all of this person's publications -->
-<span><strong>Publications: </strong></span><br>
-<% @person.publications.each do |publication| %>
-    <p>
-      <span><strong>Title: </strong><%= publication.title %></span><br>
-      <span><strong>Link: </strong><%= publication.link %>, </span>
-    </p>
-<% end %>
+  <p>
+    <strong>Description:</strong>
+    <%= @person.description %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @person.description %>
-</p>
+  <div class="center">
+    <br>
+    <% if user_signed_in? && current_user.role == "admin"%>
+      <%= link_to 'Edit', edit_person_path(@person) %> |
+    <% end %>
+    <%= link_to 'Back', people_path %>
+  </div>
 
-<% if user_signed_in? && current_user.role == "admin"%>
-  <%= link_to 'Edit', edit_person_path(@person) %> |
-<% end %>
+</div>
 
-<%= link_to 'Back', people_path %>
+
+
+
+
+

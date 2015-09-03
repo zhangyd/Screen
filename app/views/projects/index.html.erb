@@ -1,75 +1,83 @@
 
-
-<!-- VIEW ALL CURRENT RESEARCHERS -->
-<p><%= link_to "View Current Researcher Profiles", people_path %></p>
-<p><%= link_to "View All Publications", publications_path %></p>
-<p><%= link_to "View All News Reports", reports_path %></p>
-
-<h1>Current Projects</h1>
-
-<!-- DISPLAY ALL THE CURRENT PROJECTS -->
-<% @cprojects.each do |project| %>
-  <span><h2><%= project.title %></h2></span>
-  <span><%= link_to 'Show More Detail', project %></span>
-  <% if user_signed_in? && current_user.role == "admin"%>
-    | <td><%= link_to 'Edit', edit_project_path(project) %></td> |
-    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  <% end %>
-  <p><%= project.subtitle %></p>
+<div id="project-index" class="center-eighty">
   
-  <p><strong>Website:</strong> <%= project.link %></p>
+  <!-- VIEW ALL CURRENT RESEARCHERS -->
+  <div class="container">
+    <div class="five-column"><%= link_to "View Current Researcher Profiles", people_path %></div>
+    <div class="five-column"><%= link_to "View All Publications", publications_path %></div>
+    <div class="five-column"><%= link_to "View All News Reports", reports_path %></div>
+  </div>
 
-  <!-- Display Picture -->
-  <p><%= image_tag project.avatar.url(:medium) %></p>
-  
-  <!-- Display this project's people -->
-  <span><strong>People: </strong></span>
-  <% project.people.each do |person| %>
-    <span><%= person.first_name %></span>
-    <span><%= person.last_name %>, </span>
-    <span></span>
+  <div class="center">
+    <p class="p-index-title"><strong>Current Projects</strong></p>
+  </div>
+  <!-- DISPLAY ALL THE CURRENT PROJECTS -->
+  <% @cprojects.each do |project| %>
+    <span><h1><%= project.title %></h1></span>
+    <h3><%= project.subtitle %></h3>
+    <p><strong>Website:</strong> <%= project.link %></p>
+    <!-- Display this project's people -->
+    <span><strong>People: </strong></span>
+    <% project.people.each do |person| %>
+      <span><%= person.first_name %></span>
+      <span><%= person.last_name %>, </span>
+      <span></span>
+    <% end %>
+    <br><br>
+    
+    <div>
+      <!-- Display Picture -->
+      <span><%= image_tag project.avatar.url(:medium) %></span>
+      <span class="project-desctiption"><strong>Description: </strong><%= project.description %></span>
+    </div>
+
+    <br>
+    <span><%= link_to 'Show More Detail', project %></span>
+    <% if user_signed_in? && current_user.role == "admin"%>
+      | <td><%= link_to 'Edit', edit_project_path(project) %></td> |
+      <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+    <br><br><br><br><br>
+
   <% end %>
-
-  <p><%= project.description %></p>
-
-  <br><br>
-
-<% end %>
-<!-- CURRENT PROJECT DISPLAY ENDS -->
+  <!-- CURRENT PROJECT DISPLAY ENDS -->
 
 
-<h1>Past Projects</h1>
-<!-- DISPLAY ALL THE PAST PROJECTS -->
-<% @nprojects.each do |project| %>
-  <span><h2><%= project.title %></h2></span>
-  <span><%= link_to 'Show More Detail', project %></span>
-  <% if user_signed_in? && current_user.role == "admin"%>
-    | <td><%= link_to 'Edit', edit_project_path(project) %></td> |
-    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <div class="center">
+    <p class="p-index-title"><strong>Past Projects</strong></p>
+  </div>
+  <!-- DISPLAY ALL THE PAST PROJECTS -->
+  <% @nprojects.each do |project| %>
+    <span><h1><%= project.title %></h1></span>
+    <h3><%= project.subtitle %></h3>
+    <p><strong>Website:</strong> <%= project.link %></p>
+    <!-- Display this project's people -->
+    <span><strong>People: </strong></span>
+    <% project.people.each do |person| %>
+      <span><%= person.first_name %></span>
+      <span><%= person.last_name %>, </span>
+      <span></span>
+    <% end %>
+    <br><br>
+    
+    <div>
+      <!-- Display Picture -->
+      <span><%= image_tag project.avatar.url(:medium) %></span>
+      <span class="project-desctiption"><strong>Description: </strong><%= project.description %></span>
+    </div>
+
+    <br>
+    <span><%= link_to 'Show More Detail', project %></span>
+    <% if user_signed_in? && current_user.role == "admin"%>
+      | <td><%= link_to 'Edit', edit_project_path(project) %></td> |
+      <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+    <br><br>
+
   <% end %>
-  <p><%= project.subtitle %></p>
-  
-  <p><strong>Website:</strong> <%= project.link %></p>
+  <!-- Past PROJECT DISPLAY ENDS -->
 
-  <!-- Display Picture -->
-  <p><%= image_tag project.avatar.url(:medium) %></p>
-  
-  <!-- Display this project's people -->
-  <span><strong>People: </strong></span>
-  <% project.people.each do |person| %>
-    <span><%= person.first_name %></span>
-    <span><%= person.last_name %>, </span>
-    <span></span>
-  <% end %>
-
-  <p><%= project.description %></p>
-
-  <br><br>
-
-<% end %>
-<!-- PAST PROJECT DISPLAY ENDS -->
-
-
+</div>
 
 
 

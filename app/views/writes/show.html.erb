@@ -1,15 +1,17 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
-<p>
-  <strong>Person ID:</strong>
-  <%= @write.person_id %>
-</p>
+<br><br>
+<div id="write-show" class="center-fifty">
+	<p>
+	  <strong>Person ID:</strong>
+	  <%= @write.person_id %>
+	</p>
 
-<p>
-  <strong>Publication ID:</strong>
-  <%= @write.publication_id %>
-</p>
+	<p>
+	  <strong>Publication ID:</strong>
+	  <%= @write.publication_id %>
+	</p>
 
-
-<%= link_to 'Edit', edit_write_path(@write) %> |
-<%= link_to 'Back', writes_path %>
+	<%= link_to 'Edit', edit_write_path(@write) %> |
+	<%= link_to 'Back', writes_path %>
+</div>

@@ -1,22 +1,25 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
-<p>
-  <strong>User:</strong>
-  <%= @users.where(:id => @comment.user_id).first.first_name %> <%= @users.where(:id => @comment.user_id).first.last_name %>
-</p>
+<div id="comment-show" class="center-fifty">
+	<br>
+	<p>
+	  <strong>User:</strong>
+	  <%= @users.where(:id => @comment.user_id).first.first_name %> <%= @users.where(:id => @comment.user_id).first.last_name %>
+	</p>
 
-<p>
-  <strong>Project:</strong>
-  <%= @projects.where(:id => @comment.project_id).first.title %>
-</p>
+	<p>
+	  <strong>Project:</strong>
+	  <%= @projects.where(:id => @comment.project_id).first.title %>
+	</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @comment.content %>
-</p>
+	<p>
+	  <strong>Content:</strong>
+	  <%= @comment.content %>
+	</p>
 
 
-<%= link_to 'Back', root_path %>
-<% if user_signed_in? && current_user.role == "admin"%>
-  | <td><%= link_to 'Back to Admin Panel', admins_path %></td> 
-<% end %>
+	<%= link_to 'Back', root_path %>
+	<% if user_signed_in? && current_user.role == "admin"%>
+	  | <td><%= link_to 'Back to Admin Panel', admins_path %></td> 
+	<% end %>
+</div>

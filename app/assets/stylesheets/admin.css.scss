@@ -1,0 +1,56 @@
+
+#admin-index {
+
+	h1,h3 {
+		color: #7E0514;
+	}
+
+	.two-column {
+		width:40%;
+		margin-left: 2%;
+		margin-right: 2%;
+		padding-left: 3%;
+		padding-right: 3%;
+		padding-top: 1.5%;
+		padding-bottom: 1.5%;
+    float:left;
+    text-align: left;
+    margin-bottom: 20px;
+    background-color: #DEE5E7;
+    border-radius: 5px;
+	}
+
+	a {
+		font-size: 1.2em;
+	  color: #7E0514;
+	  text-decoration: underline;
+	  &:visited {
+	    color: #7E0514;
+	  }
+	  &:hover {
+	    color: blue;
+	    background-color: #DEE5E7;
+	  }
+	}
+
+	#admin-comment {
+		text-align: center;
+		background-color: #DEE5E7;
+    border-radius: 5px;
+    width: 96%;
+    margin: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,3 +1,239 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.center {
+	text-align: center;
+}
+
+.center-eighty {
+	width: 80%;
+	margin: auto;
+}
+
+.center-fifty {
+	width: 50%;
+	margin: auto;
+}
+
+.container {
+	width: 100%;
+	margin: auto;
+}
+
+.right-align {
+	text-align: right;
+}
+
+.submit {
+	font-size: 1.2em;
+	color: #DEE5E7;
+	background-color: #7E0514;
+	border-radius: 3px;
+	border: none;
+	padding: 4px, 8px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.notice {
+	background-color: #DEE5E7;
+	color: #7E0514;
+	text-align: center;
+	margin: 0px;
+	font-size: 1.4em;
+	line-height: 1.7em
+}
+
+.alert {
+	background-color: #DEE5E7;
+	color: #7E0514;
+	text-align: center;
+	margin: 0px;
+	font-size: 1.4em;
+	line-height: 1.7em;
+}
+
+#control-panel {
+ 	color: #7E0514;
+ 	width: 100%;
+ 	height: 20px;
+ 	text-align: right;
+ 	line-height: 20px;
+ 	margin-top: 10px;
+
+ 	#control-panel-words {
+		font-size: 1.2em;
+		margin: 20px;
+ 	}
+
+ 	a {
+ 		text-decoration: underline;
+	  color: #7E0514;
+	  &:visited {
+	    color: #7E0514;
+	  }
+	  &:hover {
+	  	color: blue;
+	    background-color: #DEE5E7;
+	  }
+	}
+}
+
+#login {
+ 	background-color: #7E0514;
+ 	color: #DEE5E7;
+ 	width: 100%;
+ 	height: 40px;
+ 	text-align: right;
+ 	line-height: 40px;
+
+ 	.login-words {
+ 		font-size: 1.2em;
+		margin: 20px;
+ 	}
+
+ 	a {
+	  color: #DEE5E7;
+	  &:visited {
+	    color: #DEE5E7;
+	  }
+	  &:hover {
+	    color: #DEE5E7;
+	  }
+	}
+}
+
+
+#project-index {
+
+	h1,h3 {
+		color: #7E0514;
+	}
+
+	.p-index-title {
+		font-size: 2.2em;
+	}
+
+	img {
+		float: left;
+		margin-right: 10px;
+		clear: both;
+	}
+
+	.project-description {
+		margin-left: 0px;
+		overflow: auto;
+		display: block;
+	}
+
+	a {
+		font-size: 1.2em;
+	  color: #7E0514;
+	  text-decoration: underline;
+	  &:visited {
+	    color: #7E0514;
+	  }
+	  &:hover {
+	    color: blue;
+	    background-color: #DEE5E7;
+	  }
+	}
+
+	.five-column {
+		width:33.33%;
+    float:left;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 0px;
+	}
+}
+
+#project-show {
+	h1, h3 {
+		color: #7E0514;
+	}
+	img {
+		float: left;
+		margin-right: 10px;
+		clear: both;
+	}
+
+	.project-description {
+		margin-left: 0px;
+		overflow: auto;
+		display: block;
+	}
+
+	textarea {
+	    width: 500px;
+	    height: 80px;
+	}
+}
+
+#project-edit {
+	textarea {
+	    width: 100%;
+	    height: 80px;
+	}
+	a {
+	  font-size: 1.2em;
+	  color: #7E0514;
+	  text-decoration: underline;
+	  &:visited {
+	    color: #7E0514;
+	  }
+	  &:hover {
+	    color: blue;
+	    background-color: #DEE5E7;
+	  }
+	}
+
+
+}
+
+
+#project-new {
+	textarea {
+	    width: 100%;
+	    height: 80px;
+	}
+	a {
+	  font-size: 1.2em;
+	  color: #7E0514;
+	  text-decoration: underline;
+	  &:visited {
+	    color: #7E0514;
+	  }
+	  &:hover {
+	    color: blue;
+	    background-color: #DEE5E7;
+	  }
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

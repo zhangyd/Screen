@@ -1,19 +1,27 @@
-<h1>Who Has Published What</h1>
 
-<% @writes.each do |write| %>
-  <p>
-    <strong>People: </strong><%= @people.where(:id => write.person_id).first.first_name %><br>
-    <strong>Title: </strong><%= @publications.where(:id => write.publication_id).first.title %><br>
-    <% if user_signed_in? %>
-      <%= link_to 'Edit', edit_write_path(write) %> |
-      <%= link_to 'Delete', write, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-  </p>
-<% end %>
+<div id="write-index", class="center-eighty">
 
-<br>
+	<div class="center">
+    <h1>Who Has Published What</h1><br>
+  </div>
+	
 
-<%= link_to 'New Publishing', new_write_path %> |
-<%= link_to 'Back to Main Page', projects_path %> |
-<%= link_to 'Back to Admin Panel', admins_path %>
+	<% @writes.each do |write| %>
+	  <p>
+	    <strong>People: </strong><%= @people.where(:id => write.person_id).first.first_name %><br>
+	    <strong>Title: </strong><%= @publications.where(:id => write.publication_id).first.title %><br>
+	    <% if user_signed_in? %>
+	      <%= link_to 'Edit', edit_write_path(write) %> |
+	      <%= link_to 'Delete', write, method: :delete, data: { confirm: 'Are you sure?' } %>
+	    <% end %>
+	  </p>
+	<% end %>
 
+	<br>
+
+	<div class="center">
+		<%= link_to 'Back to Main Page', projects_path %> |
+		<%= link_to 'Back to Admin Panel', admins_path %>
+  </div>
+
+</div>

@@ -1,3 +1,77 @@
 // Place all the styles related to the Publications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#publication-index {
+	a {
+		font-size: 1.2em;
+	  color: #7E0514;
+	  text-decoration: underline;
+	  &:visited {
+	    color: #7E0514;
+	  }
+	  &:hover {
+	    color: blue;
+	    background-color: #DEE5E7;
+	  }
+	}
+}
+
+#publication-show {
+
+	background-color: #DEE5E7;
+	border-radius: 5px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-right: 8px;
+	padding-left: 8px;
+
+	
+
+	a {
+		font-size: 1.2em;
+	  color: #7E0514;
+	  text-decoration: underline;
+	  &:visited {
+	    color: #7E0514;
+	  }
+	  &:hover {
+	    color: blue;
+	    background-color: #DEE5E7;
+	  }
+	}
+}
+
+#publication-edit {
+	a {
+		font-size: 1.2em;
+	  color: #7E0514;
+	  text-decoration: underline;
+	  &:visited {
+	    color: #7E0514;
+	  }
+	  &:hover {
+	    color: blue;
+	    background-color: #DEE5E7;
+	  }
+	}
+}
+
+
+#publication-new {
+	a {
+		font-size: 1.2em;
+	  color: #7E0514;
+	  text-decoration: underline;
+	  &:visited {
+	    color: #7E0514;
+	  }
+	  &:hover {
+	    color: blue;
+	    background-color: #DEE5E7;
+	  }
+	}
+}
+
+

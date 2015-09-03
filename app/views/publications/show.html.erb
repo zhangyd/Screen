@@ -1,16 +1,22 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
-<p>
-  <strong>Title:</strong>
-  <%= @publication.title %>
-</p>
+<br><br>
+<div id="publication-show" class="center-eighty">
 
-<p>
-  <strong>Link:</strong>
-  <%= @publication.link %>
-</p>
+	<p>
+	  <strong>Title:</strong>
+	  <%= @publication.title %>
+	</p>
 
-<% if user_signed_in? && current_user.role == "admin"%>
-  <%= link_to 'Edit', edit_publication_path(@publication) %> | 
-<% end %>
-<%= link_to 'Back', publications_path %>
+	<p>
+	  <strong>Link:</strong>
+	  <%= @publication.link %>
+	</p>
+
+	<br>
+	<% if user_signed_in? && current_user.role == "admin"%>
+	  <%= link_to 'Edit', edit_publication_path(@publication) %> | 
+	<% end %>
+	<%= link_to 'Back', publications_path %>
+
+</div>

@@ -1,75 +1,62 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
+<div id="project-show" class="center-eighty">
 
-<% if user_signed_in? && current_user.role == "admin"%>
-  <%= link_to 'Edit', edit_project_path(@project) %> | 
-<% end %>
+  <h1><%= @project.title %></h1>
+  <h3><%= @project.subtitle %></h3>
 
-<%= link_to 'Back', projects_path %><br>
-
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
-
-<p>
-  <strong>Subtitle:</strong>
-  <%= @project.subtitle %>
-</p>
-
-<p>
-  <strong>Link:</strong>
-  <%= @project.link %>
-</p>
-
-<!-- Display Picture -->
-<p><%= image_tag @project.avatar.url(:medium) %></p>
-
-<!-- Display this project's people -->
-<span><strong>People: </strong></span>
-<% @works.each do |work| %>
-  <span><%= work.person.first_name %></span>
-  <span><%= work.person.last_name %>, </span>
-  <span></span>
-<% end %>
-
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<!-- Display this project's publications -->
-<p><h3>Publications:</h3></p>
-<% @publications.each do |publication| %>
-	<p>
-    <strong>Title: </strong><%= publication.title %><br>
-	  <strong>Link: </strong><%= publication.link %>
-  </p> 
-<% end %>
-
-<!-- Display this project's news reports -->
-<p><h3>News Reports:</h3></p>
-<% @reports.each do |report| %>
   <p>
-    <strong>Headline: </strong><%= report.headline %><br>
-    <strong>Content: </strong><%= report.content %>
+    <strong>Link:</strong><%= @project.link %>
   </p>
-<% end %>
 
-<!-- Display this project's comments -->
-<h3>Comments:</h3>
-<% @comments.each do |comment| %>
+  <!-- Display this project's people -->
+  <span><strong>People: </strong></span>
+  <% @works.each do |work| %>
+    <span><%= work.person.first_name %></span>
+    <span><%= work.person.last_name %>, </span>
+    <span></span>
+  <% end %>
+
   <div>
-    <p>
-      <strong>Posted by: </strong><%= @users.where(:id => comment.user_id).first.first_name %> <%= @users.where(:id => comment.user_id).first.last_name %><br>
-      <strong>Content: </strong><%= comment.content %>
-    </p>
+    <!-- Display Picture -->
+    <span><%= image_tag @project.avatar.url(:medium) %></span>
+    <span class="project-desctiption"><strong>Description: </strong><%= @project.description %></span>
   </div>
-<% end %>
-<%= render 'comments/form' %>
 
+  <br style="clear:both" /><br>
 
-<!-- Bottom Options -->
+  <!-- Display this project's publications -->
+  <p><h2>Publications:</h2></p>
+  <% @publications.each do |publication| %>
+  	<p>
+      <strong>Title: </strong><%= publication.title %><br>
+  	  <strong>Link: </strong><%= publication.link %>
+    </p> 
+  <% end %>
+  <br>
 
+  <!-- Display this project's news reports -->
+  <p><h2>News Reports:</h2></p>
+  <% @reports.each do |report| %>
+    <p>
+      <strong>Headline: </strong><%= report.headline %><br>
+      <strong>Content: </strong><%= report.content %>
+    </p>
+  <% end %>
+  <br>
+
+  <!-- Display this project's comments -->
+  <h2>Comments:</h2>
+  <% @comments.each do |comment| %>
+    <div>
+      <p>
+        <strong>Posted by: </strong><%= @users.where(:id => comment.user_id).first.first_name %> <%= @users.where(:id => comment.user_id).first.last_name %><br>
+        <strong>Content: </strong><%= comment.content %>
+      </p>
+    </div>
+  <% end %>
+  <%= render 'comments/form' %>
+
+</div>
 
 
 

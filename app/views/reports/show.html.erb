@@ -1,17 +1,20 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>  -->
 
-<p>
-  <strong>Headline:</strong>
-  <%= @report.headline %>
-</p>
+<br><br>
+<div id="report-show" class="center-eighty">
+	<p>
+	  <strong>Headline:</strong>
+	  <%= @report.headline %>
+	</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @report.content %>
-</p>
+	<p>
+	  <strong>Content:</strong>
+	  <%= @report.content %>
+	</p>
 
-<% if user_signed_in? && current_user.role == "admin" %>
-  <%= link_to 'Edit', edit_report_path(@report) %> |
-<% end %> 
+	<% if user_signed_in? && current_user.role == "admin" %>
+	  <%= link_to 'Edit', edit_report_path(@report) %> |
+	<% end %> 
 
-<%= link_to 'Back', reports_path %>
+	<%= link_to 'Back', reports_path %>
+</div>

@@ -1,0 +1,48 @@
+
+.devise {
+	width: 50%;
+	background-color: #DEE5E7;
+	text-align: center;
+	margin:auto;
+	padding-top:15px;
+	padding-bottom: 15px;
+
+	a {
+		font-size: 1.2em;
+	  color: #7E0514;
+	  text-decoration: underline;
+	  &:visited {
+	    color: #7E0514;
+	  }
+	  &:hover {
+	    color: blue;
+	    background-color: #DEE5E7;
+	  }
+	}
+		.btn {
+	  background: #DEE5E7;
+	  background-image: -webkit-linear-gradient(top, #DEE5E7, #d5dbde);
+	  background-image: -moz-linear-gradient(top, #DEE5E7, #d5dbde);
+	  background-image: -ms-linear-gradient(top, #DEE5E7, #d5dbde);
+	  background-image: -o-linear-gradient(top, #DEE5E7, #d5dbde);
+	  background-image: linear-gradient(to bottom, #DEE5E7, #d5dbde);
+	  -webkit-border-radius: 10;
+	  -moz-border-radius: 10;
+	  border-radius: 10px;
+	  font-family: Arial;
+	  color: #7E0514;
+	  font-size: 20px;
+	  padding: 8px 20px 8px 20px;
+	  text-decoration: none;
+	}
+
+	.btn:hover {
+	  background: #98a4ab;
+	  background-image: -webkit-linear-gradient(top, #98a4ab, #8e9599);
+	  background-image: -moz-linear-gradient(top, #98a4ab, #8e9599);
+	  background-image: -ms-linear-gradient(top, #98a4ab, #8e9599);
+	  background-image: -o-linear-gradient(top, #98a4ab, #8e9599);
+	  background-image: linear-gradient(to bottom, #98a4ab, #8e9599);
+	  text-decoration: none;
+	}
+}
