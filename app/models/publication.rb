@@ -3,4 +3,6 @@ class Publication < ActiveRecord::Base
 
 	has_many :writes
 	has_many :publications, :through => :writes
+
+	validates :project_id, :title, :link, :presence => true
 end

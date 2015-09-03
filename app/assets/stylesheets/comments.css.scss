@@ -52,3 +52,24 @@
 	  }
 	}
 }
+
+
+#comment-new {
+	textarea {
+		width: 100%;
+		height: 40px;
+	}
+
+	a {
+		font-size: 1.2em;
+	  color: #7E0514;
+	  text-decoration: underline;
+	  &:visited {
+	    color: #7E0514;
+	  }
+	  &:hover {
+	    color: blue;
+	    background-color: #DEE5E7;
+	  }
+	}
+}

@@ -3,4 +3,5 @@ class Report < ActiveRecord::Base
 
 	has_many :writes 
 	has_many :people, :through => :writes
+
 end
